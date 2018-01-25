@@ -22,7 +22,7 @@ var admin = false;
 var no;
 var mark;
 var total;
-var count;
+// var count;
 
 // create our Express app
 const app = express();
