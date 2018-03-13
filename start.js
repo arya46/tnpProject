@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const options = {
     server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-    replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }
+    replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+    useMongoClient: true
 };
 
 // Make sure we are running node 7.6+
