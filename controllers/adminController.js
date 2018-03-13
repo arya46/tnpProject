@@ -8,7 +8,7 @@ exports.adminDashboard = (req, res) => {
 
 exports.deleteAllUser = async (req, res) => {
   await User.remove({});
-  res.send("Deleted All!");
+  res.redirect('/admin');
 }
 
 exports.deleteUser = async (req, res) => {
@@ -49,16 +49,18 @@ exports.deleteQuestion = async (req, res) => {
 
 exports.deleteAllQuestion = async (req, res) => {
   await Admin.remove({});
-  res.redirect('/questions');
+  res.redirect('/admin');
 }
 
 exports.getQuestions = async (req, res) => {
   const questions = await Admin.find({});
-  res.send(questions);
+  res.render('questions', {items: questions});
+  // res.send(questions);
 }
 
 exports.getUsers = async (req, res) => {
-  const user = await User.find({});
-  res.send(user);
+  const users = await User.find({});
+  // res.send(user);
+  res.render('allUsers', {items: users});
 }
 

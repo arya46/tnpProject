@@ -18,11 +18,7 @@ const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
 require('./handlers/passport');
 
-var admin = false;
-var no;
-var mark;
-var total;
-// var count;
+global.admin = false;
 
 // create our Express app
 const app = express();

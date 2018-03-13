@@ -3,7 +3,7 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const promisify = require('es6-promisify');
-
+const helpers = require('../helpers');
 
 exports.login = passport.authenticate('local', {
     failureRedirect: '/',
@@ -13,7 +13,6 @@ exports.login = passport.authenticate('local', {
 });
 
 exports.logout = (req, res) => {
-    mark = 0;
     req.logout();
     req.flash('success', `You're now logged out!`);
     res.redirect('/');
@@ -40,7 +39,6 @@ exports.confirmedPasswords = (req, res, next) => {
 }
 // /admin
 exports.isAdmin = (req, res, next) => {
-    admin = req.admin;
     if(admin === true){
         next();
         return;
@@ -49,28 +47,14 @@ exports.isAdmin = (req, res, next) => {
     res.redirect('/');
 }
 // /admin-login
-exports.adminLogin = (req, res, next) => {
-    if(req.admin === true){
-        res.redirect('/admin');
-    }
+exports.adminLogin = (req, res) => {
     if(req.body.username === process.env.adminName && req.body.password === process.env.adminPassword){
         admin = true;
-        next();
-        return;
     }
+    res.redirect('admin');
 }
 
 exports.adminLogout = (req, res) => {
     admin = false;
     res.redirect('/');
 }
-exports.a = (req, res) => {
-    admin = true;
-    //admin = true;
-    res.send(admin);
-};
-exports.b = (req, res) => {
-    //admin = true;
-    //admin = true;
-    res.send(admin);
-};

@@ -1,12 +1,13 @@
 <div class="container" style="text-align:center">
-  <a href="/deleteName">Delete all registered people from database.</a>
-  <h2 style="color:green">People registered</h2>
+  <h2 style="color:green">All registered users!</h2>
   <table class="table table-bordered">
     <thead>
       <tr>
         <th><b>Name</b></th>
         <th><b>Scholar Id</b></th>
         <th><b>Score</b></th>
+        <th><b>Branch</b></th>
+
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,8 @@
         <td>{{this.name}}</td>
         <td>{{this.id}}</td>
         <td>{{this.score}}</td>
+        <td>{{this.branch}}</td>
+
       </tr>
       {{/each}}
       <tr>

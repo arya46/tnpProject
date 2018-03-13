@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title> Test </title>
+    <link rel="stylesheet" href="/styles/main.css" type="text/css">
+  </head>
+  <body>
+  
+    <div>
+      <div id="quiz" class="centered grid__col--8">
+        <h1>Assessment Test</h1>
+
+        <h2 id="question" class="headline-secondary--grouped"></h2>
+
+        <p id="choice0"></p>
+        <button id="guess0" class="btn--default">Select Answer</button>
+
+        <p id="choice1"></p>
+        <button id="guess1" class="btn--default">Select Answer</button>
+        
+        <p id="choice2"></p>
+        <button id="guess2" class="btn--default">Select Answer</button>
+
+        <p id="choice3"></p>
+        <button id="guess3" class="btn--default">Select Answer</button>
+
+        <footer>
+            <p id="progress">Question x of y</p>
+        </footer>
+    </div>
+    </div>
+    <script src="/javascripts/quiz.js"></script>
+    <script src="/javascripts/question.js"></script>
+    <script src="/javascripts/quiz_ui.js"></script>
+    <script>
+        var decodedJson = decodeURIComponent("{{{questions}}}");
+        var parsedQuestions = JSON.parse(decodedJson);
+        const questions = parsedQuestions.map( item => {
+          return new Question(item.text, item.choices, item.answer);
+        });
+        var quiz = new Quiz(questions);
+        QuizUI.displayNext();
+    </script>
+  </body>
+</html>

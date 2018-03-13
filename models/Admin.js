@@ -19,7 +19,7 @@ const adminSchema = new Schema({
 
 adminSchema.statics.getQuestions = function() {
   return this.aggregate(
-      [{ $sample: { size: 2 } }]
+    [{ $sample: { size : 2 } }]
   );
 }
 
