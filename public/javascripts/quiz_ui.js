@@ -20,7 +20,7 @@ const QuizUI = {
         }
     },
     displayScore() {
-        let gameOverHTML = '<h1>Game Over</h1>';
+        let gameOverHTML = '<h1>Test Complete</h1>';
         gameOverHTML += '<h2> Your score is: ' + quiz.score + '</h2>';
         gameOverHTML += '<div class="centered grid__col--8">';
         gameOverHTML += '<form action="/test/score/'+ quiz.score + '" method="post" id="logout">';
