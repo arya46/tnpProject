@@ -8,6 +8,6 @@ It gives people an option to login to start the test and saves their scores for 
 Go to the directory and use npm install to install all the dependencies from the package.json. 
 Install Mongo Db on your system and start it using mongod. 
 Start the nodeJs server using npm start. 
-Reach the site on localhost:8000 
+Reach the site on localhost:7777 
 #hope you liked it#
-The launch site is : https://boiling-shelf-63048.herokuapp.com/
+You can see the live version <a href="https://polar-plateau-99218.herokuapp.com"><b>here</b></a>
